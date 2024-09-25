@@ -37,4 +37,4 @@ jobs:
       run: |
             echo "${{secrets.AWS_EC2_SALAH}}" >private_key && chmod 600 private_key
             ssh -o StrictHostKeyChecking=no -i private_key ubuntu@ec2-3-208-177-104.compute-1.amazonaws.com "
-            cd gitFlask/;git pull;./iniciarApp.sh;"
+            cd gitFlask/;git pull;./executar.sh;"
