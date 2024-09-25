@@ -33,11 +33,8 @@ jobs:
     - name: Relatorio do teste
       run: coverage report -m
 
-    - name: Render Deploy Action
-      uses: johnbeynon/render-deploy-action@v0.0.8
-      with:
-        service-id: srv-crddqnrtq21c73d2d5ag
-        api-key: rnd_IcbrR2EIFa6apZawYZdu2bdNApCv
-          
-    
-      
+    - name: EC2 salaH
+      run: |
+            echo "${{secrets.AWS_EC2_SALAH}}" >private_key && chmod 600 private_key
+            ssh -o StrictHostKeyChecking=no -i private_key 3.208.177.104 "
+            cd gitFlask/;git pull;./iniciarApp.sh;"
