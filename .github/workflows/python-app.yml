@@ -33,6 +33,13 @@ jobs:
     - name: Relatorio do teste
       run: coverage report -m
 
+    - name: Render Deploy Actions
+      uses: johnbeynon/render-deploy-action@v0.0.8
+      with: 
+        service-id: srv-crqjdi68ii6s73cvqub0
+        api-key: rnd_TcqmXg7OaMTCux7jZF4PtkF8woSm
+
+
     - name: EC2 salaH
       run: |
             echo "${{secrets.AWS_EC2_SALAH}}" >private_key && chmod 600 private_key
